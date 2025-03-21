@@ -1,0 +1,176 @@
+{
+	"info": {
+		"_postman_id": "87ef0f2a-45db-4349-b312-4c86f08f1b26",
+		"name": "aquariux-assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13061237",
+		"_collection_link": "https://crimson-escape-125971.postman.co/workspace/practice-springboot~91cc142b-4226-4ce2-8e0f-380f1e886c2d/collection/13061237-87ef0f2a-45db-4349-b312-4c86f08f1b26?action=share&source=collection_link&creator=13061237"
+	},
+	"item": [
+		{
+			"name": "get latest best price",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/market/price?symbol=BTCUSDT",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"market",
+						"price"
+					],
+					"query": [
+						{
+							"key": "symbol",
+							"value": "BTCUSDT"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get account balance",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "demo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/account/balance/USDT",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"account",
+						"balance",
+						"USDT"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get client trade history",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "demo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BASE_URL}}/trade/history",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"trade",
+						"history"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create order",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1234",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "demo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"symbol\": \"BTCUSDT\",\n    \"side\": \"SELL\",\n    \"type\": \"MARKET\",\n    \"qty\": 0.59,\n    \"currency\": \"USDT\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/order/create",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"order",
+						"create"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
